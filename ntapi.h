@@ -21,16 +21,17 @@ int GetPrivilege(LPCSTR lpName)
 	return 1;
 }
 
-NTSTATUS NtShutdownSystem(SHUTDOWN_ACTION Action)
+NTSTATUS NtInitiatePowerAction(POWER_ACTION SystemAction, SYSTEM_POWER_STATE MinSystemState, ULONG Flags, BOOLEAN Asynchronous)
 {
 	HMODULE hModule = GetModuleHandle("ntdll.dll");
 	if (hModule == NULL)
 	{
 		return -1;
 	}
-	NTSHUTDOWNSYSTEM _NtShutdownSystem = (NTSHUTDOWNSYSTEM)GetProcAddress(hModule, "NtShutdownSystem");
+
+	NTINITIATEPOWERACTION _NtInitiatePowerAction = (NTINITIATEPOWERACTION)GetProcAddress(hModule, "NtInitiatePowerAction");
 	FreeLibrary(hModule);
-	return _NtShutdownSystem(Action);
+	return _NtInitiatePowerAction(SystemAction, MinSystemState, Flags, Asynchronous);
 }
 
 #endif
