@@ -1,8 +1,8 @@
- #ifndef _OPT_H_
+#ifndef _OPT_H_
 #define _OPT_H_
 
-const char* opt1[12] = { "sleep","sl","hibernate","hi","shutdown","sh","reboot","re","shutdownoff","so" };
-const char* opt2[4] = { "-t","-time" };
+const char* opt1[10] = { "sleep","sl","hibernate","hi","shutdown","sh","reboot","re","shutdownoff","so" };
+const char* opt2[2] = { "-t","-time" };
 int reco1=0, reco2=0;
 
 #include <string.h>
@@ -15,16 +15,16 @@ void paropt(int argc, char* argv[])
 	{
 		for (int j = 0; j < 2; j++)
 		{
-			if (stricmp(opt2[j], argv[i]) == 0)
+			if (strcmp(opt2[j], argv[i]) == 0)
 			{
 				i++;
 				reco2 = atoi(argv[i]);
 			}
 		}
 		
-		for (int j = 0; j < 1; j++)
+		for (int j = 0; j < 10; j++)
 		{
-			if (stricmp(opt1[j], argv[i]) == 0)
+			if (strcmp(opt1[j], argv[i]) == 0)
 			{
 				reco1 = j/2+2;
 			}
