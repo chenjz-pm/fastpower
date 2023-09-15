@@ -1,4 +1,4 @@
- #ifndef _OPT_H_
+#ifndef _OPT_H_
 #define _OPT_H_
 
 const char* opt1[12] = { "sleep","sl","hibernate","hi","shutdown","sh","reboot","re","shutdownoff","so" };
