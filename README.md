@@ -1,7 +1,10 @@
 # **fastpower，一个快速执行windows电源操作的程序**
 ## 更新日志
+- build 3 bugfixed 1更新：修复build3已发现bug
+<br>
 
 - 04/11/23补充，build3存在bug，只能关机，马上发布bug fixed版本
+<br>
 
 - stable build 3: 基本功能不变，新增 -t ( 或 -time ) 功能，可以延时关机。
 <br>程序运行方法： &nbsp; fastpower [option] [mode]
