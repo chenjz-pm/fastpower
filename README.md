@@ -1,4 +1,6 @@
 # **fastpower，一个快速执行windows电源操作的程序**
+## 参考资料
+1. <https://gitee.com/Gauterman/quick-shutdown-q>
 ## 更新日志
 - build 3 bugfixed 1更新：修复build3已发现bug
 <br>
