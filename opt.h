@@ -1,8 +1,8 @@
 #ifndef _OPT_H_
 #define _OPT_H_
 
-const char* opt1[10] = { "sleep","sl","hibernate","hi","shutdown","sh","reboot","re","shutdownoff","so" };
-const char* opt2[2] = { "-t","-time" };
+const char* opt1[11] = { "sleep","sl","hibernate","hi","shutdown","sh","reboot","re","shutdownoff","so" };
+const char* opt2[3]= { "-t","-time" };
 int reco1=0, reco2=0;
 
 #include <string.h>
@@ -19,6 +19,7 @@ void paropt(int argc, char* argv[])
 			{
 				i++;
 				reco2 = atoi(argv[i]);
+				break;
 			}
 		}
 		
@@ -27,19 +28,21 @@ void paropt(int argc, char* argv[])
 			if (strcmp(opt1[j], argv[i]) == 0)
 			{
 				reco1 = j/2+2;
+				break;
 			}
 
 		}
 	}
-	if (reco2 == 0)
+	if (reco1 == 0)
 	{
 		reco1 = 4;
 	}
+		
 }
 
-int NIPA_arg2(int arg1)
+int GetVal(int arg2)
 {
-	switch (arg1)
+	switch (arg2)
 	{
 		case 3: return 5;
 		case 4: return 6;

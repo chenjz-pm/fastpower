@@ -14,7 +14,7 @@ void power(int power_action,int sleep)
 	}
 	else
 	{
-		NtInitiatePowerAction(power_action, NIPA_arg2(power_action), 0, TRUE);
+		NtInitiatePowerAction(power_action, GetVal(power_action), 0, TRUE);
 	}
 }
 
